@@ -1,0 +1,40 @@
+<openerp>
+    <data noupdate="0">
+
+        <menuitem id="licence_extension_rootmenu"
+                  name="Extension"
+                  sequence="-100"
+                  groups="group_licence_management_user"/> 
+
+        <menuitem id="extension_mainmenu"
+                  name="extension"
+                  sequence="0"
+                  parent="odoo_expiration_extension.licence_extension_rootmenu"
+                  groups="group_licence_management_user"
+                  />
+
+        <menuitem id="licence_mainmenu"
+                  name="Licence"
+                  sequence="5"
+                  parent="odoo_expiration_extension.extension_mainmenu"
+                  groups="group_licence_management_user"
+                  action="licence_extension_form_act_window_active"
+                  />
+
+        <!--<menuitem id="config_menu"
+                  name="Config"
+                  sequence="5"
+                  parent="odoo_expiration_extension.config_mainmenu"
+                  groups="group_extension_management_user"
+                  action="extension_config_form_act_window_active"
+                  />
+
+        <menuitem id="restlet_mainmenu"
+                  name="Restlet"
+                  sequence="10"
+                  parent="odoo_expiration_extension.extension_mainmenu"
+                  groups="group_extension_management_user"
+                  action="extension_restlet_form_act_window_active"
+                  />-->
+    </data>
+</openerp>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+
+    <record id="licence_extension_tree" model="ir.ui.view">
+            <field name="name">licence.extension.tree</field>
+            <field name="model">licence.extension</field>
+            <field name="arch" type="xml">
+                <list string="licence">
+                    <field name="date"/>
+                </list>
+            </field>
+        </record>
+
+    <record id="licence_extension_form" model="ir.ui.view">
+        <field name="name">licence.extension.form</field>
+        <field name="model">licence.extension</field>
+        <field name="arch" type="xml">
+            <form string="Course">
+                <header>
+                </header>
+                <sheet>
+                    <button name="extend"
+                            type="object"
+                            string="Extend Licence"
+                            class="oe_highlight"
+                            data-hotkey="y"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="date" placeholder="Extension date" />                        
+                        </h1>
+                    </div>
+                    <!--<notebook>
+                        <page string="Notes">
+                            <field name="notes" nolabel="1"/>
+                        </page>
+                    </notebook>-->
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="licence_extension_filter_view" model="ir.ui.view">
+        <field name="name">licence.extension.filter_view</field>
+        <field name="model">licence.extension</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="date"/>
+           </search>
+        </field>
+    </record>
+
+    <record id="licence_extension_form_act_window" model="ir.actions.act_window">
+        <field name="name">licence extension</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">licence.extension</field>
+        
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="licence_extension_filter_view"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            </p>
+            <p>
+                licence extension
+            </p>
+        </field>
+    </record>
+
+    <record id="licence_extension_form_act_window_active" model="ir.actions.act_window">
+        <field name="name">extension</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">licence.extension</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_state': 'active'}</field>
+        <field name="search_view_id" ref="licence_extension_filter_view"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            </p>
+        </field>
+    </record>
+
+</odoo>
